@@ -1,0 +1,7 @@
+﻿@page "{albumID:int}"
+@model EditModel
+@{
+	ViewData["Title"] = "Edit Album " + Model.Album.Title;
+}
+
+@await Component.InvokeAsync("AlbumsForm", new { album = Model.Album })
