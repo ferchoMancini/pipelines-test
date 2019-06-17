@@ -1,0 +1,29 @@
+﻿@page "{partID:int}"
+@model EditModel
+@{
+	ViewData["Title"] = "Edit Part " + Model.Part.Title;
+}
+
+
+<form method="post">
+	<div asp-validation-summary="All"></div>
+	<input asp-for="Part.PartID" type="hidden" />
+	<div>
+		<label asp-for="Part.Title"></label>
+		<div>
+			<input asp-for="Part.Title" />
+			<span asp-validation-for="Part.Title"></span>
+		</div>
+	</div>
+	<div>
+		<label asp-for="Part.CategoryID"></label>
+		<div>
+			<select asp-for="Part.CategoryID" asp-items="@Model.Categories"></select>
+			<span asp-validation-for="Part.CategoryID"></span>
+		</div>
+	</div>
+
+	<div>
+		<button type="submit">Save</button>
+	</div>
+</form>
