@@ -27,4 +27,4 @@ steps:
   inputs:
     command: build
     projects: $(project1FilePath)
-    arguments: '--configuration $(buildConfiguration) --no-restore' 
+    arguments: '--configuration $(buildConfiguration)'
