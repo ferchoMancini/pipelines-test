@@ -20,7 +20,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   project1FilePath: 'pipelines-test-1/pipelines-test.csproj'
-  project2FilePath: 'pipelines-test-2/pipelines-test.csproj'
+  project2FilePath: 'pipelines-test-2/pipelines-test-2.csproj'
 
 steps:
 - task: DotNetCoreCLI@2
