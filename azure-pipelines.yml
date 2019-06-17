@@ -11,6 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  project1FilePath: 'pipelines-test-1/pipelines-test.csproj'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
