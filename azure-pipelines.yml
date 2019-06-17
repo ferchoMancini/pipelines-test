@@ -12,19 +12,19 @@ pr:
     - master
   paths:
      include:
-     - pipelines-test-1/*
+     - pipelines-test-2/*
 
 pool:
   vmImage: 'ubuntu-latest'
 
 variables:
   buildConfiguration: 'Release'
-  project1FilePath: 'pipelines-test-1/pipelines-test.csproj'
+  project2FilePath: 'pipelines-test-2/pipelines-test-2.csproj'
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: Build Project 1 $(buildConfiguration)
+  displayName: Build Project 2 $(buildConfiguration)
   inputs:
     command: build
-    projects: $(project1FilePath)
+    projects: $(project2FilePath)
     arguments: '--configuration $(buildConfiguration)'
