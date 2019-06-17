@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- none
+- master
 
 pr:
   branches:
@@ -12,7 +12,6 @@ pr:
     - master
   paths:
      include:
-     - pipelines-test-1/*
      - pipelines-test-2/*
 
 pool:
@@ -20,16 +19,9 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  project1FilePath: 'pipelines-test-1/pipelines-test.csproj'
   project2FilePath: 'pipelines-test-2/pipelines-test-2.csproj'
 
 steps:
-- task: DotNetCoreCLI@2
-  displayName: Build Project 1 $(buildConfiguration)
-  inputs:
-    command: build
-    projects: $(project1FilePath)
-    arguments: '--configuration $(buildConfiguration)'
 - task: DotNetCoreCLI@2
   displayName: Build Project 2 $(buildConfiguration)
   inputs:
