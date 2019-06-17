@@ -14,5 +14,9 @@ variables:
   project1FilePath: 'pipelines-test-1/pipelines-test.csproj'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  displayName: Build Project 1 $(buildConfiguration)
+  inputs:
+    command: build
+    projects: $(project1FilePath)
+    arguments: '--configuration $(buildConfiguration) --no-restore' 
