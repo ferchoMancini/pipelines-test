@@ -13,6 +13,7 @@ pr:
   paths:
      include:
      - pipelines-test-1/*
+     - pipelines-test-2/*
 
 pool:
   vmImage: 'ubuntu-latest'
